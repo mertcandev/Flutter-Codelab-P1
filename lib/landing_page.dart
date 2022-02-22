@@ -2,6 +2,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_codelab_1/classes.dart';
+import 'package:flutter_codelab_1/details_page.dart';
+import 'package:flutter_codelab_1/details_rating_bar.dart';
 import 'package:flutter_codelab_1/splash_page.dart';
 
 class MountsApp extends StatelessWidget {
@@ -157,30 +159,37 @@ class AppMountListView extends StatelessWidget {
         itemCount: mountItems.length,
         itemBuilder: (context, index) {
           MountModel currentMount = mountItems[index];
-          return Container(
-            alignment: Alignment.bottomLeft,
-            padding: EdgeInsets.all(20),
-            margin: EdgeInsets.all(10),
-            width: 150,
-            decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(15),
-                image: DecorationImage(
-                    image: NetworkImage(currentMount.path), fit: BoxFit.cover)),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.end,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  currentMount.name,
-                  style: TextStyle(
-                      color: Colors.white, fontWeight: FontWeight.bold),
-                ),
-                Text(
-                  currentMount.location,
-                  style: TextStyle(color: Colors.white),
-                )
-              ],
+          return GestureDetector(
+            child: Container(
+              alignment: Alignment.bottomLeft,
+              padding: EdgeInsets.all(20),
+              margin: EdgeInsets.all(10),
+              width: 150,
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(15),
+                  image: DecorationImage(
+                      image: NetworkImage(currentMount.path),
+                      fit: BoxFit.cover)),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.end,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    currentMount.name,
+                    style: TextStyle(
+                        color: Colors.white, fontWeight: FontWeight.bold),
+                  ),
+                  Text(
+                    currentMount.location,
+                    style: TextStyle(color: Colors.white),
+                  )
+                ],
+              ),
             ),
+            onTap: () {
+              Navigator.of(context).push(MaterialPageRoute(
+                  builder: (context) => DetailsPage(currentMount)));
+            },
           );
         },
       ),

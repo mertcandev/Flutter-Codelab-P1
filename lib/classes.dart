@@ -29,7 +29,7 @@ final List<MountModel> mountItems = [
           'Mount Merbabu is a dormant stratovolcano in Central Java province on the Indonesian island of Java. The name Merbabu could be loosely translated as Mountain of Ash from the Javanese combined words; Meru means mountain and awu or abu means ash.',
       location: 'Central Java'),
   MountModel(
-      path: 'https://cdn.dlmag.com/wp-content/uploads/2019/07/maunaloa1.jpg',
+      path: 'https://www.agrisoz.com/images/haberler/58071.jpg',
       name: 'Mauna Loa',
       description:
           'Mauna Loa is one of five volcanoes that form the Island of Hawaii in the U.S. state of Hawai in the Pacific Ocean. The largest subaerial volcano in both mass and volume, Mauna Loa has historically been considered the largest volcano on Earth, dwarfed only by Tamu Massif.',
@@ -73,3 +73,4 @@ class AppBottomBarItem {
 
   AppBottomBarItem({this.icon, this.label = '', this.isSelected = false});
 }
+
